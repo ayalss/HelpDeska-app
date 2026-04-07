@@ -2,38 +2,13 @@
 
 A full-stack help desk application built with React JS, Python Flask, and PostgreSQL.
 
-## 🚀 Project Overview
+## Project Overview
 
 - **Company Name:** Technoceram
 - **Brand Colors:** Black (#000000), White (#FFFFFF), Red (#E53935)
 - **Frontend:** React JS with Vite
 - **Backend:** Python Flask
 - **Database:** PostgreSQL
-
-## 📁 Project Structure
-
-```
-PROJECT 2/
-├── frontend/                 # React JS Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Login/       # Login page component
-│   │   │   └── Dashboard/   # Dashboard component
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index.html
-├── backend/                  # Python Flask Backend
-│   ├── app.py              # Main application
-│   ├── requirements.txt    # Python dependencies
-│   └── .env               # Environment variables
-├── database/               # Database scripts
-│   └── schema.sql
-└── SPEC.md                # Project specification
-```
 
 ## 🛠️ Setup Instructions
 
@@ -103,8 +78,7 @@ The frontend will run on `http://localhost:3000`
 | Email | Password | Role |
 |-------|----------|------|
 | admin@technoceram.com | admin123 | Admin |
-| support@technoceram.com | support123 | Agent |
-| user@technoceram.com | user123 | User |
+
 
 ## 📝 API Endpoints
 
@@ -119,7 +93,7 @@ The frontend will run on `http://localhost:3000`
 ## 🎨 Features
 
 ### Login Page
-- ✅ Technoceram branding (Black, White, Red theme)
+- ✅ Technoceram branding
 - ✅ Email/password validation
 - ✅ Remember me functionality
 - ✅ Error handling with user feedback
@@ -145,5 +119,5 @@ The frontend will run on `http://localhost:3000`
 
 ## 📄 License
 
-Copyright © 2024 Technoceram. All rights reserved.
+Copyright © 2025 Aya Lss. All rights reserved.
 
