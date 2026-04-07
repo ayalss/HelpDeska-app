@@ -1,0 +1,8 @@
+--- User Data Report ---
+[1] Name: 'Admin User', Email: 'admin@technoceram.com', Role: 'admin', Dept: 'IT'
+[2] Name: 'Admin', Email: 'admin2@technoceram.com', Role: 'admin', Dept: 'None'
+[3] Name: 'Aya', Email: 'aya@technoceram.com', Role: 'it', Dept: 'IT Support'
+[4] Name: 'manager', Email: 'manager@technoceram.com', Role: 'manager', Dept: 'Sales'
+[5] Name: 'achat', Email: 'achat@technoceram.com', Role: 'user', Dept: 'Sales'
+[6] Name: 'import', Email: 'import@technoceram.com', Role: 'user', Dept: 'Logistics'
+[7] Name: 'dhiaa', Email: 'dhiaa@technoceram.com', Role: 'it', Dept: 'IT Support'

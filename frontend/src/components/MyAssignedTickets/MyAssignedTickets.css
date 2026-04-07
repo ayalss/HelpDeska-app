@@ -1,0 +1,420 @@
+.my-assigned-tickets {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.my-assigned-header {
+  background: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.my-assigned-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.my-assigned-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #E53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.refresh-btn:hover {
+  background: #c62828;
+}
+
+.my-assigned-main {
+  padding: 24px;
+}
+
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #666;
+}
+
+.tickets-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 24px;
+}
+
+.tickets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ticket-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ticket-card.selected {
+  border-color: #E53935;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ticket-number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.ticket-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+  text-transform: capitalize;
+}
+
+.ticket-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+.ticket-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+}
+
+.ticket-user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ticket-priority {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.ticket-details {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.details-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.ticket-details h3 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.status-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.start-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.start-btn:hover:not(:disabled) {
+  background: #1976D2;
+}
+
+.resolve-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.resolve-btn:hover:not(:disabled) {
+  background: #388E3C;
+}
+
+.close-btn {
+  background: #757575;
+  color: white;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: #616161;
+}
+
+.details-info {
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.info-row label {
+  width: 100px;
+  font-weight: 500;
+  color: #666;
+}
+
+.info-row span {
+  color: #333;
+}
+
+.description-section {
+  margin-bottom: 24px;
+}
+
+.description-section label {
+  display: block;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.description-section p {
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.comments-section h4 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+.comments-list {
+  margin-bottom: 16px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.no-comments {
+  color: #999;
+  font-style: italic;
+}
+
+.comment {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.comment-author {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.staff-badge {
+  background: #4CAF50;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.manager-badge {
+  background: #2196F3;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.admin-badge {
+  background: #E53935;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.comment-text {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.add-comment textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.add-comment textarea:focus {
+  outline: none;
+  border-color: #E53935;
+}
+
+.add-comment button {
+  padding: 10px 20px;
+  background: #E53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.add-comment button:hover:not(:disabled) {
+  background: #c62828;
+}
+
+.add-comment button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .tickets-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .my-assigned-header {
+    padding: 12px 16px;
+  }
+  
+  .my-assigned-main {
+    padding: 16px;
+  }
+}
+

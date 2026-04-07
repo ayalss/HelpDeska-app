@@ -1,0 +1,11 @@
+=== Enhanced User Data Report ===
+Total users: 7
+Active admins: 2
+
+ID:1 | Name:'Admin User' | Email:'admin@technoceram.com' | Role:'admin' | Dept:'IT' | Active:True | Created:2026-03-04 09:41:47.418136
+ID:2 | Name:'Admin' | Email:'admin2@technoceram.com' | Role:'admin' | Dept:'None' | Active:True | Created:2026-03-05 09:39:00.266477
+ID:3 | Name:'Aya' | Email:'aya@technoceram.com' | Role:'it' | Dept:'IT Support' | Active:True | Created:2026-03-05 10:59:35.767006
+ID:4 | Name:'manager' | Email:'manager@technoceram.com' | Role:'manager' | Dept:'Sales' | Active:True | Created:2026-03-05 11:00:55.001276
+ID:5 | Name:'achat' | Email:'achat@technoceram.com' | Role:'user' | Dept:'Sales' | Active:True | Created:2026-03-05 11:01:39.075779
+ID:6 | Name:'import' | Email:'import@technoceram.com' | Role:'user' | Dept:'Logistics' | Active:True | Created:2026-03-05 11:02:00.401808
+ID:7 | Name:'dhiaa' | Email:'dhiaa@technoceram.com' | Role:'it' | Dept:'IT Support' | Active:True | Created:2026-03-09 10:40:57.555887

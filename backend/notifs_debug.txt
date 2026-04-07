@@ -1,0 +1,18 @@
+--- Recent Comments ---
+RealDictRow({'id': 25, 'ticket_id': 2, 'user_id': 3, 'is_internal': False, 'created_at': datetime.datetime(2026, 3, 16, 11, 54, 0, 278221)})
+RealDictRow({'id': 24, 'ticket_id': 5, 'user_id': 4, 'is_internal': False, 'created_at': datetime.datetime(2026, 3, 16, 11, 53, 30, 921166)})
+RealDictRow({'id': 23, 'ticket_id': 2, 'user_id': 3, 'is_internal': False, 'created_at': datetime.datetime(2026, 3, 16, 11, 51, 18, 738710)})
+RealDictRow({'id': 22, 'ticket_id': 2, 'user_id': 3, 'is_internal': True, 'created_at': datetime.datetime(2026, 3, 16, 11, 48, 28, 694680)})
+RealDictRow({'id': 21, 'ticket_id': 5, 'user_id': 4, 'is_internal': False, 'created_at': datetime.datetime(2026, 3, 16, 11, 33, 19, 136844)})
+
+--- Recent Notifications ---
+RealDictRow({'id': 19, 'user_id': 6, 'title': 'New Comment on Your Ticket', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 54, 0, 315863)})
+RealDictRow({'id': 18, 'user_id': 3, 'title': 'New Comment on Ticket', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 53, 31, 15817)})
+RealDictRow({'id': 17, 'user_id': 5, 'title': 'New Comment on Your Ticket', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 53, 30, 966996)})
+RealDictRow({'id': 16, 'user_id': 6, 'title': 'New Comment on Your Ticket', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 51, 18, 776440)})
+RealDictRow({'id': 15, 'user_id': 6, 'title': 'Ticket Status Updated', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 48, 21, 580918)})
+RealDictRow({'id': 14, 'user_id': 6, 'title': 'Ticket Status Updated', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 48, 20, 834568)})
+RealDictRow({'id': 13, 'user_id': 5, 'title': 'Ticket Status Updated', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 39, 18, 927354)})
+RealDictRow({'id': 12, 'user_id': 5, 'title': 'Ticket Status Updated', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 39, 18, 146232)})
+RealDictRow({'id': 11, 'user_id': 5, 'title': 'Ticket Status Updated', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 39, 17, 230939)})
+RealDictRow({'id': 10, 'user_id': 3, 'title': 'New Comment on Ticket', 'type': 'info', 'created_at': datetime.datetime(2026, 3, 16, 11, 33, 19, 251628)})

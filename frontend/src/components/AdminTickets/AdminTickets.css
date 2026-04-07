@@ -1,0 +1,589 @@
+.admin-tickets {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.admin-tickets-header {
+  background: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-tickets-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-tickets-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #E53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.refresh-btn:hover {
+  background: #c62828;
+}
+
+.admin-tickets-main {
+  padding: 24px;
+}
+
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #666;
+}
+
+.tickets-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tickets-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tickets-table th {
+  background: #f8f9fa;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: #666;
+  text-transform: uppercase;
+  border-bottom: 2px solid #eee;
+}
+
+.tickets-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.tickets-table tr:hover {
+  background: #f8f9fa;
+}
+
+.tickets-table .ticket-number {
+  font-weight: 600;
+  color: #E53935;
+}
+
+.tickets-table .ticket-title {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tickets-table .ticket-user {
+  color: #666;
+}
+
+.tickets-table .ticket-assigned {
+  min-width: 150px;
+}
+
+.tickets-table .assignment-cell {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.tickets-table .assignment-cell select {
+  flex: 1;
+}
+
+.save-btn {
+  padding: 4px 8px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-btn:hover {
+  background: #388E3C;
+}
+
+.save-btn:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.tickets-table select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tickets-table .ticket-status select {
+  color: white;
+  border: none;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.tickets-table .ticket-status select option {
+  background: white;
+  color: #333;
+}
+
+.tickets-table .ticket-priority {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tickets-table .ticket-date {
+  color: #666;
+  font-size: 13px;
+}
+
+.tickets-table .ticket-actions {
+  text-align: center;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.view-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+@media (max-width: 1200px) {
+  .tickets-table {
+    overflow-x: auto;
+  }
+  
+  .tickets-table table {
+    min-width: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-tickets-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 16px;
+  }
+  
+  .header-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .filters {
+    width: 100%;
+  }
+  
+  .filters select {
+    flex: 1;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-detail-modal .modal-header {
+  background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+  color: white;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-detail-modal .modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ticket-detail-modal .close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.ticket-detail-modal .close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ticket-detail-modal .modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Detail Section */
+.ticket-detail-modal .detail-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.ticket-detail-modal .detail-section h3 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: #333;
+}
+
+.ticket-detail-modal .detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ticket-detail-modal .detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticket-detail-modal .detail-row label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.ticket-detail-modal .detail-row span {
+  font-size: 14px;
+  color: #333;
+}
+
+.ticket-detail-modal .status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ticket-detail-modal .detail-row.closed-time {
+  background: #e8f5e9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  grid-column: span 2;
+}
+
+.ticket-detail-modal .detail-row.closed-time label {
+  color: #2e7d32;
+}
+
+.ticket-detail-modal .detail-row.closed-time span {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* Description Section */
+.ticket-detail-modal .description-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.ticket-detail-modal .description-section label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ticket-detail-modal .description-section p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Comments Section */
+.ticket-detail-modal .comments-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ticket-detail-modal .comments-section h4 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.ticket-detail-modal .comments-list {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.ticket-detail-modal .no-comments {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.ticket-detail-modal .comment {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid #E53935;
+}
+
+.ticket-detail-modal .comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ticket-detail-modal .comment-author {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticket-detail-modal .it-badge,
+.ticket-detail-modal .manager-badge,
+.ticket-detail-modal .admin-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.ticket-detail-modal .it-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.ticket-detail-modal .manager-badge {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.ticket-detail-modal .admin-badge {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.ticket-detail-modal .comment-date {
+  font-size: 11px;
+  color: #999;
+}
+
+.ticket-detail-modal .comment-text {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Add Comment */
+.ticket-detail-modal .add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ticket-detail-modal .add-comment textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.ticket-detail-modal .add-comment textarea:focus {
+  outline: none;
+  border-color: #E53935;
+}
+
+.ticket-detail-modal .add-comment button {
+  align-self: flex-end;
+  padding: 10px 24px;
+  background: #E53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ticket-detail-modal .add-comment button:hover {
+  background: #c62828;
+}
+
+.ticket-detail-modal .add-comment button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
