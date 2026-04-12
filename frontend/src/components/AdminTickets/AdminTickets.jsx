@@ -14,15 +14,62 @@ const AdminTickets = ({ onBack }) => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [commentLoading, setCommentLoading] = useState(false)
+  const [isOn, setIsOn] = useState(false)
 
   const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user')
   const currentUser = storedUser ? JSON.parse(storedUser) : {}
-const canAssign = currentUser.role?.toLowerCase() === 'admin'
+  const canAssign = currentUser.role?.toLowerCase() === 'admin'
 
   useEffect(() => {
     fetchTickets()
     fetchUsers()
+    fetchAIStatus()
   }, [])
+const handleToggle = async () => {
+  try {
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token')
+
+    const newValue = !isOn
+
+    setIsOn(newValue) // instant UI change
+
+    const response = await fetch('/api/admin/ai-toggle', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ enabled: newValue })
+    })
+
+    if (!response.ok) {
+      // rollback if failed
+      setIsOn(!newValue)
+    }
+
+  } catch (err) {
+    console.error('Toggle error:', err)
+  }
+}
+
+const fetchAIStatus = async () => {
+  try {
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token')
+
+    const response = await fetch('/api/admin/ai-status', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+
+    if (response.ok) {
+      const data = await response.json()
+      setIsOn(data.enabled)
+    }
+  } catch (err) {
+    console.error('Error loading AI status:', err)
+  }
+}
 
   const fetchTickets = async () => {
     try {
@@ -287,7 +334,23 @@ const canAssign = currentUser.role?.toLowerCase() === 'admin'
             </svg>
             Refresh
           </button>
-        </div>
+          <div className="ai-toggle-container">
+  <div className="ai-text">
+    <span className="ai-title">AI Assignment</span>
+    <span className="ai-sub">
+      {isOn ? 'Automatic assignment enabled' : 'Manual assignment only'}
+    </span>
+  </div>
+
+  <div className="iphone-toggle" onClick={handleToggle}>
+    <div className={`switch ${isOn ? 'on' : ''}`}>
+      <div className="knob"></div>
+    </div>
+  </div>
+</div>
+
+        </div> 
+        
       </header>
 
       <main className="admin-tickets-main">

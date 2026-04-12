@@ -12,6 +12,8 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from ai_assignment import is_ai_assignment_enabled, enable_ai_assignment
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 # Load environment variables
 load_dotenv()
@@ -56,6 +58,35 @@ def index():
         'status': 'running'
     })
 
+@app.route('/api/admin/ai-status', methods=['GET'])
+@jwt_required()
+def ai_status():
+    try:
+        return jsonify({
+            "enabled": is_ai_assignment_enabled()
+        })
+    except Exception as e:
+        return jsonify({"message": str(e)}), 500
+
+@app.route('/api/admin/ai-toggle', methods=['POST'])
+@jwt_required()
+def toggle_ai():
+    try:
+        data = request.get_json()
+        enabled = data.get("enabled")
+
+        if enabled is None:
+            return jsonify({"message": "Missing 'enabled' field"}), 400
+
+        enable_ai_assignment(enabled)
+
+        return jsonify({
+            "message": "AI assignment updated",
+            "enabled": enabled
+        }), 200
+
+    except Exception as e:
+        return jsonify({"message": str(e)}), 500
 
 # =========================
 # LOGIN

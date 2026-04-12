@@ -26,6 +26,67 @@
   font-size: 24px;
   color: #333;
 }
+/* Container */
+.ai-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+/* Text block */
+.ai-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+/* Title */
+.ai-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Subtitle */
+.ai-sub {
+  font-size: 11px;
+  color: #777;
+}
+
+/* Toggle */
+.iphone-toggle {
+  cursor: pointer;
+}
+
+/* Switch */
+.switch {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.switch.on {
+  background-color: #4cd964;
+}
+
+.knob {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.switch.on .knob {
+  transform: translateX(24px);
+}
 
 .back-btn {
   background: none;
