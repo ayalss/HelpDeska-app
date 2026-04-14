@@ -12,8 +12,8 @@ import os
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import RealDictCursor
-from ai_assignment import is_ai_assignment_enabled, enable_ai_assignment
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from ai_assignment import is_ai_assignment_enabled, enable_ai_assignment, get_best_it_agent, auto_assign_unassigned_tickets
+
 
 # Load environment variables
 load_dotenv()
@@ -32,6 +32,8 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Initialize JWT
 jwt = JWTManager(app)
+
+
 
 # =========================
 # Database Connection
@@ -79,6 +81,9 @@ def toggle_ai():
             return jsonify({"message": "Missing 'enabled' field"}), 400
 
         enable_ai_assignment(enabled)
+        if enabled:
+            auto_assign_unassigned_tickets()
+        print(f"[AI] Toggle to {enabled}")
 
         return jsonify({
             "message": "AI assignment updated",
@@ -568,19 +573,31 @@ def create_ticket():
         conn.commit()
         
 # AI Auto Assignment
-        try:
-            from ai_assignment import is_ai_assignment_enabled, get_best_it_agent
-            if is_ai_assignment_enabled():
-                best_agent = get_best_it_agent(category, priority)
-                if best_agent:
-                    cursor.execute(
-                        "UPDATE tickets SET assigned_to = %s, updated_at = CURRENT_TIMESTAMP WHERE id = %s",
-                        (best_agent['id'], ticket['id'])
+        if is_ai_assignment_enabled():
+            best_agent = get_best_it_agent(category, priority)
+            if best_agent:
+                cursor.execute(
+                    "UPDATE tickets SET assigned_to = %s, updated_at = CURRENT_TIMESTAMP WHERE id = %s",
+                    (best_agent['id'], ticket['id'])
+                )
+                conn.commit()
+                print(f"[AI] Ticket {ticket['ticket_number']} assigned to {best_agent['name']}")
+                
+                try:
+                    from notifications import create_notification
+                    create_notification(
+                        user_id=best_agent['id'],
+                        title="New Ticket Assigned",
+                        message=f"You have been assigned ticket {ticket['ticket_number']} by AI",
+                        notification_type='info',
+                        link='/assigned-tickets'
                     )
-                    conn.commit()
-                    print(f"AI assigned ticket {ticket['ticket_number']} to {best_agent['name']}")
-        except Exception as e:
-            print(f"AI assignment error: {e}")
+                    print(f"[AI NOTIFY] Ticket {ticket['ticket_number']} assigned to {best_agent['name']}")
+                except Exception as e:
+                    print(f"[AI NOTIFY ERROR] {e}")
+
+            else:
+                print("[AI ERROR] No best agent found")
 
         # Notify admins about new ticket
         try:
