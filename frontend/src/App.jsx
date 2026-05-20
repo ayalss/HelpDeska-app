@@ -7,6 +7,7 @@ import MyTickets from './components/MyTickets/MyTickets'
 import MyAssignedTickets from './components/MyAssignedTickets/MyAssignedTickets'
 import AdminTickets from './components/AdminTickets/AdminTickets'
 import AdminDashboard from './components/AdminDashboard/AdminDashboard'
+import InventoryStub from './components/Inventory/InventoryStub'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   const [showMyAssignedTickets, setShowMyAssignedTickets] = useState(false)
   const [showAdminTickets, setShowAdminTickets] = useState(false)
   const [showAdminDashboard, setShowAdminDashboard] = useState(false)
+  const [showInventory, setShowInventory] = useState(false)
 
   useEffect(() => {
     const token =
@@ -67,6 +69,8 @@ function App() {
           <AdminTickets onBack={() => setShowAdminTickets(false)} />
         ) : showAdminDashboard ? (
           <AdminDashboard onBack={() => setShowAdminDashboard(false)} />
+        ) : showInventory ? (
+          <InventoryStub onBack={() => setShowInventory(false)} />
         ) : (
           <Dashboard
             onLogout={handleLogout}
@@ -76,6 +80,7 @@ function App() {
             onNavigateToMyAssignedTickets={() => setShowMyAssignedTickets(true)}
             onNavigateToAdminTickets={() => setShowAdminTickets(true)}
             onNavigateToAdminDashboard={() => setShowAdminDashboard(true)}
+            onNavigateToInventory={() => setShowInventory(true)}
           />
         )
       ) : (

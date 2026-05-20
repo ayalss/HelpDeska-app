@@ -2,13 +2,6 @@
 
 A full-stack help desk application built with React JS, Python Flask, and PostgreSQL.
 
-## Project Overview
-
-- **Company Name:** Technoceram
-- **Brand Colors:** Black (#000000), White (#FFFFFF), Red (#E53935)
-- **Frontend:** React JS with Vite
-- **Backend:** Python Flask
-- **Database:** PostgreSQL
 
 ## 🛠️ Setup Instructions
 

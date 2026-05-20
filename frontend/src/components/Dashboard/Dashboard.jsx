@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Dashboard.css'
 
-const Dashboard = ({ onLogout, onNavigateToUserManagement, onNavigateToCreateTicket, onNavigateToMyTickets, onNavigateToMyAssignedTickets, onNavigateToAdminTickets, onNavigateToAdminDashboard }) => {
+const Dashboard = ({ onLogout, onNavigateToUserManagement, onNavigateToCreateTicket, onNavigateToMyTickets, onNavigateToMyAssignedTickets, onNavigateToAdminTickets, onNavigateToAdminDashboard, onNavigateToInventory }) => {
 
   const [notifications, setNotifications] = useState([])
   const [unreadCount, setUnreadCount] = useState(0)
@@ -198,18 +198,40 @@ const Dashboard = ({ onLogout, onNavigateToUserManagement, onNavigateToCreateTic
           <p>Your gateway to technical support and assistance</p>
         </div>
 
-        <div className="dashboard-grid">
-          {isAdminOrManager && (
+          <div className="dashboard-grid">
+          {(isAdminOrManager || user.role === 'it') && (
             <>
-              <div className="dashboard-card admin-card" onClick={onNavigateToUserManagement}>
-                <div className="card-icon admin-icon">
+              <div className="dashboard-card" onClick={onNavigateToInventory}>
+                <div className="card-icon">
                   <svg viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    <path fill="currentColor" d="M7 4h-2v2h2V4zm10 0v2h2V4h-2zM4 7v13h16V7H4zm2 2h12v2H6V9zm0 4h12v6H6v-6z" />
                   </svg>
                 </div>
-                <h3>User Management</h3>
-                <p>Manage user accounts and permissions</p>
+                <h3>Inventory</h3>
+                <p>Manage equipment and QR codes</p>
               </div>
+
+              <div className="dashboard-card admin-card" onClick={onNavigateToAdminTickets}>
+
+                <div className="card-icon admin-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                  </svg>
+                </div>
+                <h3>All Tickets</h3>
+                <p>View and manage all tickets</p>
+              </div>
+
+              <div className="dashboard-card admin-card" onClick={onNavigateToAdminDashboard}>
+                <div className="card-icon admin-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                  </svg>
+                </div>
+                <h3>Admin Dashboard</h3>
+                <p>Team performance and statistics</p>
+              </div>
+
 
               <div className="dashboard-card admin-card" onClick={onNavigateToAdminTickets}>
                 <div className="card-icon admin-icon">
